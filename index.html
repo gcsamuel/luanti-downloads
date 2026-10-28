@@ -158,7 +158,7 @@
 </head>
 <body>
 
-  <header>
+  <header id="inicio">
     <div class="container">
       <div class="top-bar">
         <a href="#" class="logo">
@@ -167,10 +167,10 @@
         </a>
         <nav>
           <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Blog do GC</a></li>
-            <li><a href="#">Conteúdos Geniais</a></li>
-            <li><a href="#">MAPA - Livro PBB</a></li>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#blog">Blog do GC</a></li>
+            <li><a href="#conteudos">Conteúdos Geniais</a></li>
+            <li><a href="#mapa">MAPA - Livro PBB</a></li>
           </ul>
         </nav>
         <div class="top-right">
@@ -212,9 +212,12 @@
         <div class="card mac">
           <div class="card-icon">🍎</div>
           <span class="tag">macOS</span>
-          <h3>Mac (Apple Silicon)</h3>
+          <h3>Mac</h3>
           <p>Luanti 5.17.0 para macOS 12.3+.</p>
-          <a href="downloads/luanti-5.17.0_macos12.3_arm64.zip" class="btn btn-primary" download="luanti-5.17.0_macos12.3_arm64.zip">Baixar para Mac</a>
+          <div class="btn-group">
+            <a href="downloads/luanti-5.17.0_macos12.3_arm64.zip" class="btn btn-primary" download="luanti-5.17.0_macos12.3_arm64.zip">Apple Silicon</a>
+            <a href="downloads/luanti-5.17.0_macos12.3_x86_64.zip" class="btn btn-outline" download="luanti-5.17.0_macos12.3_x86_64.zip">Intel</a>
+          </div>
         </div>
 
         <div class="card linux">
@@ -223,9 +226,9 @@
           <h3>Linux</h3>
           <p>Escolha o formato para sua distribuição.</p>
           <div class="btn-group">
-            <a href="https://flathub.org/apps/net.luanti.luanti" class="btn btn-primary" target="_blank" rel="noopener">Flatpak</a>
+            <a href="downloads/luanti-linux-install.tar.xz" class="btn btn-primary" download="luanti-linux-install.tar.xz">Guia de Instalação</a>
+            <a href="https://flathub.org/apps/net.luanti.luanti" class="btn btn-outline" target="_blank" rel="noopener">Flatpak</a>
             <a href="https://www.luanti.org/download/" class="btn btn-outline" target="_blank" rel="noopener">AppImage / .deb</a>
-            <a href="downloads/luanti-linux-info.tar.xz" class="btn btn-outline" download="luanti-linux-info.tar.xz">Guia</a>
           </div>
         </div>
 
@@ -367,7 +370,7 @@
     </div>
   </section>
 
-  <section class="blog">
+  <section class="blog" id="blog">
     <div class="container">
       <h2 class="section-title">Blog do GC</h2>
       <p class="section-subtitle">Confira nossas últimas notícias sobre tecnologia e educação cristã.</p>
@@ -397,6 +400,38 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="sobre" id="conteudos">
+    <div class="container">
+      <h2 class="section-title">Conteúdos Geniais</h2>
+      <p class="section-subtitle">Materiais educacionais e tecnológicos desenvolvidos pelo IGC.</p>
+      <div class="sobre-grid">
+        <div class="sobre-item">
+          <img src="assets/images/robutil01.png" alt="EBD TEC">
+          <h4>EBD TEC – Inteligência Artificial</h4>
+          <p>Curso de IA aplicada à educação bíblica.</p>
+        </div>
+        <div class="sobre-item">
+          <img src="assets/images/robutil02.png" alt="KIT JEC">
+          <h4>KIT JEC</h4>
+          <p>Jornada Evangelho em Circuitos.</p>
+        </div>
+        <div class="sobre-item">
+          <img src="assets/images/robutil04.png" alt="Simulide">
+          <h4>Simulide</h4>
+          <p>Simulação de circuitos eletrônicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="igc-highlight" id="mapa">
+    <div class="container">
+      <h3 style="color: var(--primary-dark); margin-bottom: 1rem; font-size: 1.5rem;">🗺️ MAPA – Livro PBB</h3>
+      <p style="color: var(--gray); margin-bottom: 1rem;">O mapa do livro PBB do Instituto Gênio Cristão.</p>
+      <a href="https://pbb.geniocristao.com.br/mapa/" class="btn btn-primary" target="_blank" rel="noopener">Acessar MAPA PBB</a>
     </div>
   </section>
 
@@ -449,6 +484,18 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Rolagem suave para âncoras internas
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
     document.querySelectorAll('a[download]').forEach(function(link) {
       link.addEventListener('click', function(e) {
         var href = this.getAttribute('href');

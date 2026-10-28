@@ -9,11 +9,12 @@ igc/
 ├── index.html      # Página única (HTML + CSS embutido, identidade IGC)
 ├── README.md       # Este arquivo
 └── downloads/      # Arquivos oficiais do Luanti (já baixados)
-    ├── luanti-5.17.0.exe              # Windows Instalador (~12 MB)
-    ├── luanti-5.17.0-win64.zip        # Windows Portable (~17 MB)
+    ├── luanti-5.17.0.exe                  # Windows Instalador (~12 MB)
+    ├── luanti-5.17.0-win64.zip            # Windows Portable (~17 MB)
     ├── luanti-5.17.0_macos12.3_arm64.zip  # macOS Apple Silicon (~13 MB)
-    ├── luanti-5.17.0-arm64-v8a.apk    # Android (Celular) (~17 MB)
-    └── luanti-linux-info.tar.xz       # Linux: guia de instalação (~0.5 KB)
+    ├── luanti-5.17.0_macos12.3_x86_64.zip # macOS Intel (~14 MB)
+    ├── luanti-5.17.0-arm64-v8a.apk        # Android (Celular) (~17 MB)
+    └── luanti-linux-install.tar.xz        # Linux: guia de instalação (~0.5 KB)
 ```
 
 ## Seções da página
@@ -28,6 +29,16 @@ igc/
 ## Download direto
 
 Os botões de **Windows, Mac e Android** fazem download direto do arquivo (atributo `download`), sem abrir outra página.
+
+**Windows**: Instalador (.exe) ou Portable (.zip)
+
+**Mac**: Apple Silicon (.zip) ou Intel (.zip)
+
+**Linux**: Baixe o guia de instalação com instruções para Flatpak, AppImage/.deb e código-fonte.
+
+**APK**: Apenas para celulares Android.
+
+**Google Play / App Store**: Abrem a página da loja (não há arquivo direto).
 
 **Windows**: Instalador (.exe) ou Portable (.zip)  
 **Linux**: Flatpak, AppImage/.deb via site oficial ou guia local  
