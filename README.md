@@ -18,9 +18,10 @@ igc/
 ├── index.html      # Página única (HTML + CSS embutido, sem dependências externas)
 ├── README.md       # Este arquivo
 └── downloads/      # Arquivos oficiais do Luanti (ja baixados)
-    ├── luanti-5.17.0-win64.zip              # Windows 64-bit (~17 MB)
+    ├── luanti-5.17.0.exe                    # Windows Instalador (~12 MB)
+    ├── luanti-5.17.0-win64.zip              # Windows Portable (~17 MB)
     ├── luanti-5.17.0_macos12.3_arm64.zip    # macOS Apple Silicon (~13 MB)
-    ├── luanti-5.17.0-arm64-v8a.apk          # Android arm64 (~17 MB)
+    ├── luanti-5.17.0-arm64-v8a.apk          # Android (Celular) (~17 MB)
     └── luanti-linux-info.tar.xz             # Linux: guia de instalacao (~0.5 KB)
 ```
 
@@ -30,11 +31,16 @@ A página é **100% auto-contida**: todo o CSS está dentro do `index.html` e n�
 
 Os botões de **Windows, Mac e Android** apontam para arquivos oficiais do Luanti 5.17.0 já hospedados na pasta `downloads/`, com o atributo `download`. Ao clicar, o navegador faz o download direto do arquivo, sem abrir outra página.
 
-**Linux**: não há um instalador único oficial para Linux no GitHub. O link baixa um guia (`luanti-linux-info.tar.xz`) com instruções de instalação via Flatpak, AppImage ou pacotes da distro, além do link para o site oficial.
+**Windows** oferece duas opções (igual ao site oficial do Luanti):
+- **Instalador (.exe)**: instala normalmente no sistema (recomendado).
+- **Portable (.zip)**: basta descompactar e usar, sem instalação.
 
-**Google Play Store** e **Apple App Store** são lojas externas: não existem arquivos diretos para download, então esses botões abrem a página da loja (não há como fazer download direto delas por segurança do navegador).
+**Linux** oferece várias formas (sem arquivo único direto no GitHub):
+- **Flatpak**: via Flathub (link direto na página).
+- **AppImage / .deb / Código-fonte**: via site oficial do Luanti (link direto na página).
+- **Guia local**: arquivo `luanti-linux-info.tar.xz` com instruções passo a passo.
 
-Os arquivos já foram baixados e estão prontos. Basta publicar no GitHub ou copiar a pasta `igc/` para o servidor da sua intranet.
+**APK** é apenas para <strong>celulares Android</strong>. Baixe o arquivo `.apk` e instale diretamente no celular.
 
 ## Como colocar no GitHub
 

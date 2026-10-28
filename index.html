@@ -187,13 +187,31 @@
 
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border: 2px solid rgba(255, 255, 255, 0.6);
+      color: var(--primary-dark);
+      border: 2px solid var(--primary-dark);
     }
 
     .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: var(--primary-dark);
+      color: var(--white);
       text-decoration: none;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 0.75rem;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-group .btn {
+      width: 100%;
+    }
+
+    @media (min-width: 480px) {
+      .btn-group {
+        flex-direction: row;
+      }
     }
 
     /* ============ Seção de downloads ============ */
@@ -487,8 +505,11 @@
           <div class="card-icon">🪟</div>
           <span class="tag">Windows</span>
           <h3>Windows (64-bit)</h3>
-          <p>Luanti 5.17.0 para Windows 10 e 11 (arquivo .zip).</p>
-          <a href="downloads/luanti-5.17.0-win64.zip" class="btn btn-primary" download="luanti-5.17.0-win64.zip">Baixar para Windows</a>
+          <p>Luanti 5.17.0 para Windows 10 e 11.</p>
+          <div class="btn-group">
+            <a href="downloads/luanti-5.17.0.exe" class="btn btn-primary" download="luanti-5.17.0.exe">Instalador (.exe)</a>
+            <a href="downloads/luanti-5.17.0-win64.zip" class="btn btn-outline" download="luanti-5.17.0-win64.zip">Portable (.zip)</a>
+          </div>
         </div>
 
         <!-- macOS -->
@@ -505,17 +526,21 @@
           <div class="card-icon">🐧</div>
           <span class="tag">Linux</span>
           <h3>Linux</h3>
-          <p>Não há instalador único direto. Baixe o guia com instruções (Flatpak, AppImage, pacotes da distro).</p>
-          <a href="downloads/luanti-linux-info.tar.xz" class="btn btn-primary" download="luanti-linux-info.tar.xz">Baixar para Linux</a>
+          <p>Escolha o formato para sua distribuição.</p>
+          <div class="btn-group">
+            <a href="https://flathub.org/apps/net.luanti.luanti" class="btn btn-primary" target="_blank" rel="noopener">Flatpak</a>
+            <a href="https://www.luanti.org/download/" class="btn btn-outline" target="_blank" rel="noopener">AppImage / .deb / Source</a>
+            <a href="downloads/luanti-linux-info.tar.xz" class="btn btn-outline" download="luanti-linux-info.tar.xz">Guia</a>
+          </div>
         </div>
 
         <!-- Android APK -->
         <div class="card android">
-          <div class="card-icon">🤖</div>
-          <span class="tag">Android</span>
-          <h3>APK (Android)</h3>
-          <p>Luanti 5.17.0 arm64-v8a para Android (arquivo .apk).</p>
-          <a href="downloads/luanti-5.17.0-arm64-v8a.apk" class="btn btn-primary" download="luanti-5.17.0-arm64-v8a.apk">Baixar APK (Android)</a>
+          <div class="card-icon">📱</div>
+          <span class="tag">Android (Celular)</span>
+          <h3>APK para Celular</h3>
+          <p>Luanti 5.17.0 arm64-v8a para celulares Android (arquivo .apk).</p>
+          <a href="downloads/luanti-5.17.0-arm64-v8a.apk" class="btn btn-primary" download="luanti-5.17.0-arm64-v8a.apk">Baixar APK</a>
         </div>
 
         <!-- Google Play -->
@@ -540,8 +565,9 @@
         <div class="notice">
         <strong>⚠️ Importante:</strong> O Luanti era anteriormente chamado de <strong>Minetest</strong>. Algumas lojas de aplicativo ainda exibem o nome antigo.<br>
         <strong>Google Play e App Store</strong> são lojas externas: não existem arquivos diretos para download, então esses botões abrem a página da loja.<br>
-        <strong>Windows, Mac e Android</strong> fazem download direto dos arquivos oficiais (versão 5.17.0) hospedados na sua intranet.<br>
-        <strong>Linux</strong> não possui instalador único oficial; o link baixa um guia com instruções de instalação (Flatpak, AppImage, pacotes da distro).
+        <strong>Windows</strong> oferece duas opções: <strong>Instalador (.exe)</strong> (recomendado) ou <strong>Portable (.zip)</strong> (sem instalação).<br>
+        <strong>Linux</strong> oferece Flatpak, AppImage/.deb (via site oficial) e guia de instalação local.<br>
+        <strong>APK</strong> é apenas para <strong>celulares Android</strong>.
       </div>
 
       <!-- Como instalar -->
