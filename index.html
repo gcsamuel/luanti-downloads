@@ -82,8 +82,6 @@
     .btn-group { display: flex; gap: 0.75rem; flex-direction: column; width: 100%; }
     .btn-group .btn { width: 100%; }
     @media (min-width: 480px) { .btn-group { flex-direction: row; } }
-    .btn-outline { background: transparent; color: var(--primary-dark); border: 2px solid var(--primary-dark); }
-    .btn-outline:hover { background: var(--primary-dark); color: var(--white); text-decoration: none; }
 
     /* Destaque IGC */
     .igc-highlight { background: var(--light); border-left: 4px solid var(--primary); padding: 2rem; border-radius: 0 12px 12px 0; margin: 2rem 0; }
@@ -100,12 +98,34 @@
     .manifesto-item h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
     .manifesto-item p { font-size: 0.9rem; color: var(--gray); }
 
+    /* Sobre o IGC */
+    .sobre { padding: 4rem 0; background: var(--light); }
+    .sobre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .sobre-item img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 1rem; }
+    .sobre-item h4 { font-size: 1.25rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
+    .sobre-item p { font-size: 0.95rem; color: var(--gray); }
+
     /* Contato igual ao site */
     .contato { padding: 4rem 0; background: var(--light); }
     .contato-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .contato-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .contato-item img { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 0; flex-shrink: 0; }
+    .contato-item div { flex: 1; }
     .contato-item h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
-    .contato-item p { font-size: 0.95rem; color: var(--gray); }
+    .contato-item p { font-size: 0.95rem; color: var(--gray); margin-bottom: 0.25rem; }
     .contato-item strong { color: var(--primary-dark); }
+
+    /* Blog igual ao site */
+    .blog { padding: 4rem 0; background: var(--white); }
+    .blog h2 { font-size: 2rem; font-weight: 800; text-align: center; margin-bottom: 3rem; color: var(--dark); }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .blog-item { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: transform 0.2s; }
+    .blog-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .blog-item img { width: 100%; height: 200px; object-fit: cover; }
+    .blog-item-content { padding: 1.5rem; }
+    .blog-item-meta { font-size: 0.85rem; color: var(--gray); margin-bottom: 0.75rem; }
+    .blog-item h4 { font-size: 1.1rem; font-weight: 800; margin-bottom: 0.5rem; color: var(--dark); }
+    .blog-item p { font-size: 0.9rem; color: var(--gray); }
 
     /* Aviso */
     .notice { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; border-radius: 8px; padding: 1rem 1.25rem; margin: 2rem 0; font-size: 0.9rem; text-align: center; }
@@ -261,24 +281,48 @@
       <p class="section-subtitle">Reconhecendo nossa cota de responsabilidade com a propagação do evangelho de Jesus e a responsabilidade com a formação educacional das futuras gerações.</p>
       <div class="manifesto-grid">
         <div class="manifesto-item">
-          <img src="assets/images/robutil06.png" alt="Responsabilidade Educacional" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+          <img src="assets/images/robutil06.png" alt="Responsabilidade Educacional">
           <h4>Responsabilidade Educacional</h4>
           <p>Integração entre educação formal e tecnologia.</p>
         </div>
         <div class="manifesto-item">
-          <img src="assets/images/robutil03.png" alt="Transformação Social" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+          <img src="assets/images/robutil03.png" alt="Transformação Social">
           <h4>Transformação Social</h4>
           <p>Impactando comunidades através da tecnologia.</p>
         </div>
         <div class="manifesto-item">
-          <img src="assets/images/robutil09.png" alt="Nobreza Moral" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+          <img src="assets/images/robutil09.png" alt="Nobreza Moral">
           <h4>Nobreza Moral</h4>
           <p>Formação de caráter com princípios cristãos.</p>
         </div>
         <div class="manifesto-item">
-          <img src="assets/images/robutil08.png" alt="Cosmovisão Cristã" style="width: 80px; height: 80px; object-fit: cover; border-radius: 50%;">
+          <img src="assets/images/robutil08.png" alt="Cosmovisão Cristã">
           <h4>Cosmovisão Cristã</h4>
           <p>Desenvolvendo uma visão de mundo bíblica.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sobre">
+    <div class="container">
+      <h2 class="section-title">Soluções Tecnológicas Autorais</h2>
+      <p class="section-subtitle">O IGC desenvolve soluções próprias para educação e igreja.</p>
+      <div class="sobre-grid">
+        <div class="sobre-item">
+          <img src="assets/images/robutil01.png" alt="Solução 1">
+          <h4>Solução 1</h4>
+          <p>Tecnologia autoral desenvolvida pelo IGC.</p>
+        </div>
+        <div class="sobre-item">
+          <img src="assets/images/robutil02.png" alt="Solução 2">
+          <h4>Solução 2</h4>
+          <p>Ferramentas para igrejas e escolas.</p>
+        </div>
+        <div class="sobre-item">
+          <img src="assets/images/robutil04.png" alt="Solução 3">
+          <h4>Solução 3</h4>
+          <p>Inovação com propósito cristão.</p>
         </div>
       </div>
     </div>
@@ -290,26 +334,67 @@
       <p class="section-subtitle">Um instituto que tem o objetivo de apresentar a palavra de Deus através da tecnologia.</p>
       <div class="contato-grid">
         <div class="contato-item">
-          <img src="assets/images/robutil05.png" alt="Missão" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem;">
-          <h4>✝️ Missão</h4>
-          <p>Transformar cada educando em um GC, integrando educação formal, tecnologia e princípios cristãos.</p>
+          <img src="assets/images/robutil05.png" alt="Missão">
+          <div>
+            <h4>✝️ Missão</h4>
+            <p>Transformar cada educando em um GC, integrando educação formal, tecnologia e princípios cristãos.</p>
+          </div>
         </div>
         <div class="contato-item">
-          <img src="assets/images/courses-img4.png" alt="Contato" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem;">
-          <h4>📱 Contato</h4>
-          <p><strong>Telefone:</strong> 45 9 9947-1787</p>
-          <p><strong>Email:</strong> contato@geniocristao.com.br</p>
+          <img src="assets/images/courses-img4.png" alt="Contato">
+          <div>
+            <h4>📱 Contato</h4>
+            <p><strong>Telefone:</strong> 45 9 9947-1787</p>
+            <p><strong>Email:</strong> contato@geniocristao.com.br</p>
+          </div>
         </div>
         <div class="contato-item">
-          <img src="assets/images/about-img4.png" alt="Endereço" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem;">
-          <h4>📍 Endereço</h4>
-          <p>Rua Marechal Cândido Rondon, 1336 – Neva</p>
-          <p>Cascavel-PR</p>
+          <img src="assets/images/about-img4.png" alt="Endereço">
+          <div>
+            <h4>📍 Endereço</h4>
+            <p>Rua Marechal Cândido Rondon, 1336 – Neva</p>
+            <p>Cascavel-PR</p>
+          </div>
         </div>
         <div class="contato-item">
-          <img src="assets/images/about-img5.png" alt="CNPJ" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; margin-bottom: 1rem;">
-          <h4>📄 CNPJ</h4>
-          <p>39.725.994/0001-49</p>
+          <img src="assets/images/about-img5.png" alt="CNPJ">
+          <div>
+            <h4>📄 CNPJ</h4>
+            <p>39.725.994/0001-49</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="blog">
+    <div class="container">
+      <h2 class="section-title">Blog do GC</h2>
+      <p class="section-subtitle">Confira nossas últimas notícias sobre tecnologia e educação cristã.</p>
+      <div class="blog-grid">
+        <div class="blog-item">
+          <img src="assets/images/blog-mineclonia.jpg" alt="Como instalar o Mineclonia">
+          <div class="blog-item-content">
+            <div class="blog-item-meta">GC · out 2, 2026</div>
+            <h4>Como instalar o Mineclonia</h4>
+            <p>Aprenda a instalar o Mineclonia em todas as plataformas.</p>
+          </div>
+        </div>
+        <div class="blog-item">
+          <img src="assets/images/blog-basilio.jpg" alt="Basílio de Cesareia">
+          <div class="blog-item-content">
+            <div class="blog-item-meta">GC · maio 8, 2026</div>
+            <h4>Meu filho só deve ler a Bíblia?</h4>
+            <p>O que Basílio de Cesareia pode nos ensinar sobre isso?</p>
+          </div>
+        </div>
+        <div class="blog-item">
+          <img src="assets/images/blog-cidade.jpg" alt="A Cidade da Destruição">
+          <div class="blog-item-content">
+            <div class="blog-item-meta">GC · jan 25, 2026</div>
+            <h4>A Cidade da Destruição</h4>
+            <p>O começo de toda jornada.</p>
+          </div>
         </div>
       </div>
     </div>
