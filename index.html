@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luanti - Downloads | Baixe para Windows, Mac, Linux, Android e iOS</title>
+  <meta name="description" content="Baixe o Luanti (antes Minetest) para todos os sistemas: Windows, macOS, Linux, Android (APK), Google Play e Apple App Store.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230d9488'/%3E%3Ctext x='50' y='65' font-family='sans-serif' font-size='55' text-anchor='middle' fill='%23ffffff' font-weight='bold'%3EL%3C/text%3E%3C/svg%3E">
+  <style>
+    /* ============ Variáveis e reset ============ */
+    :root {
+      --primary: #0d9488;      /* teal - destaque */
+      --primary-dark: #0f766e;
+      --dark: #0f172a;         /* slate-900 */
+      --gray: #475569;         /* slate-600 */
+      --light: #f8fafc;        /* slate-50 */
+      --white: #ffffff;
+      --border: #e2e8f0;       /* slate-200 */
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --max-w: 1100px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ============ Header ============ */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: var(--shadow);
+    }
+
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.25rem;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.75rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    /* ============ Hero ============ */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: var(--white);
+      padding: 5rem 0;
+      text-align: center;
+      border-radius: 0 0 60px 60px;
+      overflow: hidden;
+    }
+
+    .hero .kicker {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: #94f3d4;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #ccfbf1;
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+
+    .hero .cta-group {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, filter 0.2s;
+      border: none;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+      background: #f1f5f9;
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+    }
+
+    /* ============ Seção de downloads ============ */
+    section {
+      padding: 4rem 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      font-size: 1.05rem;
+    }
+
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: var(--primary);
+    }
+
+    .card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      font-size: 1.75rem;
+      margin-bottom: 1.25rem;
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .card.windows .card-icon { background: #0078d5; }
+    .card.mac .card-icon { background: #000000; }
+    .card.linux .card-icon { background: #f3b700; color: var(--dark); }
+    .card.android .card-icon { background: #a4c639; }
+    .card.playstore .card-icon { background: #2196f3; }
+    .card.appstore .card-icon { background: #000000; }
+
+    .card h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-bottom: 1.5rem;
+    }
+
+    .card .btn {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      color: var(--primary-dark);
+      background: #d1fae5;
+    }
+
+    /* ============ Como instalar ============ */
+    .howto {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      margin-top: 2rem;
+    }
+
+    .howto .section-title {
+      text-align: left;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .step {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      color: var(--white);
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .step h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .step p {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* ============ Aviso ============ */
+    .notice {
+      background: #fef3c7;
+      border: 1px solid #fcd34d;
+      color: #92400e;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    .notice strong {
+      color: #b45309;
+    }
+
+    /* ============ Footer ============ */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 3rem 0 2rem;
+      border-top: 1px solid #334155;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h5 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: var(--white);
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col li {
+      margin-bottom: 0.6rem;
+    }
+
+    .footer-col a {
+      color: #cbd5e1;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    .socials {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      width: 36px;
+      height: 36px;
+      background: #334155;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      font-size: 1.1rem;
+    }
+
+    .socials a:hover {
+      background: var(--primary);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #334155;
+      padding-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    /* ============ Responsivo ============ */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 2rem; }
+      .top-bar { flex-direction: column; align-items: stretch; }
+      .top-bar nav { order: 3; width: 100%; }
+      .top-bar nav ul { justify-content: center; }
+      nav ul { gap: 1.25rem; }
+      .btn { width: 100%; justify-content: center; }
+      .hero .cta-group { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="top-bar">
+        <a href="#" class="logo">
+          <div class="logo-mark">L</div>
+          <span>Luanti Downloads</span>
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#downloads">Downloads</a></li>
+            <li><a href="#como-instalar">Como instalar</a></li>
+            <li><a href="https://www.luanti.org/" target="_blank" rel="noopener">Site oficial</a></li>
+            <li><a href="https://github.com/luanti-org/luanti" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <span class="kicker">Jogo livre e de código aberto</span>
+      <h1>Baixe o Luanti para todos os seus dispositivos</h1>
+      <p>O Luanti (antes Minetest) é um motor de jogos de voxelos gratuito e de código aberto. Disponível para Windows, macOS, Linux, Android (APK), Google Play e Apple App Store.</p>
+      <div class="cta-group">
+        <a href="#downloads" class="btn btn-primary">Ver downloads</a>
+        <a href="https://www.luanti.org/" target="_blank" rel="noopener" class="btn btn-outline">Conheça o Luanti</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Downloads -->
+  <section id="downloads">
+    <div class="container">
+      <h2 class="section-title">Downloads por plataforma</h2>
+      <p class="section-subtitle">Escolha a versão correspondente ao seu sistema operacional. Todos os links apontam para fontes oficiais (site do Luanti e repositório GitHub).</p>
+
+      <div class="downloads-grid">
+        <!-- Windows -->
+        <div class="card windows">
+          <div class="card-icon">🪟</div>
+          <span class="tag">Windows</span>
+          <h3>Windows (64-bit)</h3>
+          <p>Luanti 5.17.0 para Windows 10 e 11 (arquivo .zip).</p>
+          <a href="downloads/luanti-5.17.0-win64.zip" class="btn btn-primary" download="luanti-5.17.0-win64.zip">Baixar para Windows</a>
+        </div>
+
+        <!-- macOS -->
+        <div class="card mac">
+          <div class="card-icon">🍎</div>
+          <span class="tag">macOS</span>
+          <h3>Mac (Apple Silicon)</h3>
+          <p>Luanti 5.17.0 para macOS 12.3+ (arquivo .zip).</p>
+          <a href="downloads/luanti-5.17.0_macos12.3_arm64.zip" class="btn btn-primary" download="luanti-5.17.0_macos12.3_arm64.zip">Baixar para Mac</a>
+        </div>
+
+        <!-- Linux -->
+        <div class="card linux">
+          <div class="card-icon">🐧</div>
+          <span class="tag">Linux</span>
+          <h3>Linux</h3>
+          <p>Não há instalador único direto. Baixe o guia com instruções (Flatpak, AppImage, pacotes da distro).</p>
+          <a href="downloads/luanti-linux-info.tar.xz" class="btn btn-primary" download="luanti-linux-info.tar.xz">Baixar para Linux</a>
+        </div>
+
+        <!-- Android APK -->
+        <div class="card android">
+          <div class="card-icon">🤖</div>
+          <span class="tag">Android</span>
+          <h3>APK (Android)</h3>
+          <p>Luanti 5.17.0 arm64-v8a para Android (arquivo .apk).</p>
+          <a href="downloads/luanti-5.17.0-arm64-v8a.apk" class="btn btn-primary" download="luanti-5.17.0-arm64-v8a.apk">Baixar APK (Android)</a>
+        </div>
+
+        <!-- Google Play -->
+        <div class="card playstore">
+          <div class="card-icon">▶️</div>
+          <span class="tag">Google Play Store</span>
+          <h3>Android (Play Store)</h3>
+          <p>Instalação automática via Google Play.</p>
+          <a href="https://play.google.com/store/apps/details?id=net.minetest.minetest" class="btn btn-primary" target="_blank" rel="noopener">Abrir na Play Store</a>
+        </div>
+
+        <!-- Apple App Store -->
+        <div class="card appstore">
+          <div class="card-icon">📱</div>
+          <span class="tag">Apple App Store</span>
+          <h3>iOS (iPhone / iPad)</h3>
+          <p>Disponível na App Store da Apple.</p>
+          <a href="https://apps.apple.com/us/app/minetest/id1458402527" class="btn btn-primary" target="_blank" rel="noopener">Abrir na App Store</a>
+        </div>
+      </div>
+
+        <div class="notice">
+        <strong>⚠️ Importante:</strong> O Luanti era anteriormente chamado de <strong>Minetest</strong>. Algumas lojas de aplicativo ainda exibem o nome antigo.<br>
+        <strong>Google Play e App Store</strong> são lojas externas: não existem arquivos diretos para download, então esses botões abrem a página da loja.<br>
+        <strong>Windows, Mac e Android</strong> fazem download direto dos arquivos oficiais (versão 5.17.0) hospedados na sua intranet.<br>
+        <strong>Linux</strong> não possui instalador único oficial; o link baixa um guia com instruções de instalação (Flatpak, AppImage, pacotes da distro).
+      </div>
+
+      <!-- Como instalar -->
+      <div class="howto" id="como-instalar">
+        <h2 class="section-title">Como instalar</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h4>Escolha a plataforma</h4>
+            <p>Clique no botão do seu sistema acima (Windows, Mac, Linux ou Android).</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h4>Baixe o arquivo</h4>
+            <p>No GitHub, baixe o instalador ou o APK correspondente à sua versão.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h4>Instale e jogue</h4>
+            <p>Execute o instalador ou abra o APK. No Android, ative "Fontes desconhecidas" se necessário.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo" style="color: var(--white);">
+            <div class="logo-mark" style="background: var(--primary);">L</div>
+            <span>Luanti Downloads</span>
+          </div>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin-top: 1rem;">
+            Página de downloads do Luanti hospedada no GitHub e publicada em sua intranet.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Plataformas</h5>
+          <ul>
+            <li><a href="#downloads">Windows</a></li>
+            <li><a href="#downloads">macOS</a></li>
+            <li><a href="#downloads">Linux</a></li>
+            <li><a href="#downloads">Android (APK)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Lojas de apps</h5>
+          <ul>
+            <li><a href="https://play.google.com/store/apps/details?id=net.minetest.minetest" target="_blank" rel="noopener">Google Play Store</a></li>
+            <li><a href="https://apps.apple.com/us/app/minetest/id1458402527" target="_blank" rel="noopener">Apple App Store</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Oficial e comunidade</h5>
+          <ul>
+            <li><a href="https://www.luanti.org/" target="_blank" rel="noopener">luanti.org</a></li>
+            <li><a href="https://github.com/luanti-org/luanti" target="_blank" rel="noopener">GitHub do Luanti</a></li>
+            <li><a href="https://github.com/luanti-org/luanti/releases" target="_blank" rel="noopener">Lançamentos (Releases)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com" target="_blank" rel="noopener" title="GitHub">⌘</a>
+        <a href="https://www.luanti.org/" target="_blank" rel="noopener" title="Luanti">🌐</a>
+      </div>
+
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Luanti Downloads. Página criada para uso em intranet via GitHub Pages.<br>
+        O Luanti é um software livre de código aberto. Este site não é afiliado oficialmente ao projeto Luanti.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Força download direto em links com atributo 'download'
+    document.querySelectorAll('a[download]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+
+        // Só força download se for arquivo local da intranet (mesma origem)
+        // Links externos (lojas) não permitem download direto por segurança do navegador
+        if (href.startsWith('http') && !href.includes(location.hostname)) {
+          return; // abre normalmente (loja)
+        }
+
+        e.preventDefault();
+
+        fetch(href)
+          .then(function(res) {
+            return res.blob();
+          })
+          .then(function(blob) {
+            var url = URL.createObjectURL(blob);
+            var a = document.createElement('a');
+            a.href = url;
+            a.download = this.getAttribute('download') || href.split('/').pop();
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+          }.bind(this))
+          .catch(function() {
+            // Fallback: se falhar, abre normalmente
+            window.location.href = href;
+          });
+      });
+    });
+  </script>
+</body>
+</html>
