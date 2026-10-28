@@ -1,110 +1,55 @@
-# Página de Downloads do Luanti
+# Página de Downloads do Luanti | Instituto Gênio Cristão
 
-Página HTML simples e auto-contida com os links de download do **Luanti** (antes Minetest) para todos os sistemas:
-
-- Windows
-- macOS
-- Linux
-- Android (arquivo APK)
-- Google Play Store
-- Apple App Store (iOS)
-
-Estilo inspirado no site [Instituto Gênio Cristão](https://geniocristao.com.br/): limpo, profissional, com cabeçalho, cards de download, seção de como instalar e rodapé com contatos e redes sociais.
+Página HTML com a identidade visual do **Instituto Gênio Cristão (IGC)**, contendo downloads do **Luanti** (antes Minetest) para todos os sistemas, além de seções para o **lançamento do livro** e informações sobre o IGC.
 
 ## Estrutura
 
 ```
 igc/
-├── index.html      # Página única (HTML + CSS embutido, sem dependências externas)
+├── index.html      # Página única (HTML + CSS embutido, identidade IGC)
 ├── README.md       # Este arquivo
-└── downloads/      # Arquivos oficiais do Luanti (ja baixados)
-    ├── luanti-5.17.0.exe                    # Windows Instalador (~12 MB)
-    ├── luanti-5.17.0-win64.zip              # Windows Portable (~17 MB)
-    ├── luanti-5.17.0_macos12.3_arm64.zip    # macOS Apple Silicon (~13 MB)
-    ├── luanti-5.17.0-arm64-v8a.apk          # Android (Celular) (~17 MB)
-    └── luanti-linux-info.tar.xz             # Linux: guia de instalacao (~0.5 KB)
+└── downloads/      # Arquivos oficiais do Luanti (já baixados)
+    ├── luanti-5.17.0.exe              # Windows Instalador (~12 MB)
+    ├── luanti-5.17.0-win64.zip        # Windows Portable (~17 MB)
+    ├── luanti-5.17.0_macos12.3_arm64.zip  # macOS Apple Silicon (~13 MB)
+    ├── luanti-5.17.0-arm64-v8a.apk    # Android (Celular) (~17 MB)
+    └── luanti-linux-info.tar.xz       # Linux: guia de instalação (~0.5 KB)
 ```
 
-A página é **100% auto-contida**: todo o CSS está dentro do `index.html` e não há imagens ou arquivos externos. Isso é ideal para intranet.
+## Seções da página
 
-### Download direto (sem redirecionamento)
+- **Header**: Logo e nome do IGC, navegação
+- **Hero**: Apresentação com links para downloads e lançamento do livro
+- **Downloads**: Cards por plataforma com download direto (sem redirecionamento)
+- **Lançamento do Livro**: Destaque para a nova publicação do IGC
+- **Sobre o IGC**: Missão, contato e endereço
+- **Footer**: Links rápidos, redes sociais e copyright
 
-Os botões de **Windows, Mac e Android** apontam para arquivos oficiais do Luanti 5.17.0 já hospedados na pasta `downloads/`, com o atributo `download`. Ao clicar, o navegador faz o download direto do arquivo, sem abrir outra página.
+## Download direto
 
-**Windows** oferece duas opções (igual ao site oficial do Luanti):
-- **Instalador (.exe)**: instala normalmente no sistema (recomendado).
-- **Portable (.zip)**: basta descompactar e usar, sem instalação.
+Os botões de **Windows, Mac e Android** fazem download direto do arquivo (atributo `download`), sem abrir outra página.
 
-**Linux** oferece várias formas (sem arquivo único direto no GitHub):
-- **Flatpak**: via Flathub (link direto na página).
-- **AppImage / .deb / Código-fonte**: via site oficial do Luanti (link direto na página).
-- **Guia local**: arquivo `luanti-linux-info.tar.xz` com instruções passo a passo.
+**Windows**: Instalador (.exe) ou Portable (.zip)  
+**Linux**: Flatpak, AppImage/.deb via site oficial ou guia local  
+**APK**: Apenas para celulares Android  
+**Google Play / App Store**: Abrem a página da loja (não há arquivo direto)
 
-**APK** é apenas para <strong>celulares Android</strong>. Baixe o arquivo `.apk` e instale diretamente no celular.
-
-## Como colocar no GitHub
-
-### 1. Crie o repositório
-
-1. Acesse https://github.com e faça login.
-2. Clique em **+ → New repository**.
-3. Nomeie o repositório, por exemplo: `luanti-downloads`.
-4. Escolha **Public** (ou Private, se for apenas para intranet).
-5. Não inicialize com README (já temos os arquivos locais).
-6. Clique em **Create repository**.
-
-### 2. Envie os arquivos
-
-No seu terminal, dentro da pasta `/home/zoro/Documents/igc`:
+## Como publicar no GitHub
 
 ```bash
+cd /home/zoro/Documents/igc
 git init
 git add .
-git commit -m "pagina de downloads do luanti"
+git commit -m "Página IGC com downloads do Luanti"
 git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/luanti-downloads.git
+git remote add origin https://github.com/gcsamuel/luanti-downloads.git
 git push -u origin main
 ```
 
-Substitua `SEU-USUARIO` pelo seu nome de usuário do GitHub.
+Depois ative o **GitHub Pages**: Settings → Pages → Branch `main` → Pasta `/ (root)` → Save.
 
-Alternativamente, você pode enviar os arquivos diretamente pelo site do GitHub (botão "upload files").
+Sua página ficará em: `https://gcsamuel.github.io/luanti-downloads/`
 
-### 3. Ative o GitHub Pages
+## Uso na intranet
 
-1. No repositório no GitHub, vá em **Settings → Pages**.
-2. Em **Build and deployment → Source**, selecione **Deploy from a branch**.
-3. Escolha a branch `main` e a pasta `/ (root)`.
-4. Clique em **Save**.
-
-Após alguns instantes, o GitHub informará a URL da sua página, algo como:
-
-```
-https://SEU-USUARIO.github.io/luanti-downloads/
-```
-
-## Como usar na intranet
-
-Como a página é um único arquivo HTML sem dependências externas, você tem várias opções para publicar na intranet:
-
-### Opção A — Servir via GitHub Pages (mais simples)
-Use a URL gerada acima (`https://SEU-USUARIO.github.io/luanti-downloads/`). Basta que os computadores da intranet tenham acesso à internet para acessar o GitHub Pages.
-
-### Opção B — Copiar o `index.html` para um servidor interno
-Se a intranet não tem internet ou você quer hospedar localmente:
-1. Copie o arquivo `index.html` para qualquer servidor web interno (IIS, Apache, Nginx, etc.).
-2. Exemplo no IIS: coloque em `C:\inetpub\wwwroot\luanti\` e acesse via `http://servidor-interno/luanti/`.
-3. Exemplo no Apache/Nginx: coloque em `/var/www/html/luanti/` e acesse via `http://servidor-interno/luanti/`.
-
-### Opção C — Abrir diretamente como arquivo
-Em último caso, pode distribuir o `index.html` e abri-lo diretamente no navegador (duplo clique), embora isso não seja recomendado para uso coletivo em rede.
-
-## Personalização
-
-- **Links de download:** Verifique periodicamente os links no `index.html`, especialmente os do GitHub Releases (`https://github.com/luanti-org/luanti/releases/latest`), pois apontam para a versão mais recente.
-- **Lojas:** Os links da Google Play e Apple App Store podem mudar conforme o app for renomeado de "Minetest" para "Luanti". Atualize conforme necessário.
-- **Cores:** Edite as variáveis CSS no topo do `<style>` (`--primary`, `--dark`, etc.) para mudar a identidade visual.
-
-## Licença
-
-Esta página é um projeto independente de utilidade para download. O Luanti é um software livre de código aberto e esta página não é afiliada oficialmente ao projeto Luanti.
+Como a página é auto-contida (sem dependências externas), você também pode copiar a pasta `igc/` inteira para qualquer servidor web interno (IIS, Apache, Nginx) e acessar pelo endereço interno da rede.
